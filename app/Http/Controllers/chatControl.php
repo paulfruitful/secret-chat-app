@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chat;
 use App\Models\Message;
+use App\Events\Messagesent;
 use Illuminate\Http\Request;
 
 class chatControl extends Controller
@@ -15,5 +16,18 @@ class chatControl extends Controller
     public function show(Chat $chat){
         return view('chat',['chats'=>$chat->message]);
     }
+
+    public function sendMessage(Request $request)
+{
+  $user = auth()->user();
+
+  $message = $user->message->create([
+    'message' => $request->input('message')
+  ]);
+
+  broadcast(new Messagesent($user, $message))->toOthers();
+
+  return ['status' => 'Message Sent!'];
+}
 
 }
