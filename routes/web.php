@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\chatControl;
 use Illuminate\Support\Facades\Route;
 
