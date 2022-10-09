@@ -10,10 +10,10 @@ class chatControl extends Controller
 {
     //
     public function index(){
-        return view('chats',['chats'=>Chat::latest()]);
+        return view('chats',['chats'=>auth()->user()->chat->latest()]);
     }
     public function show(Chat $chat){
-        
+        return view('chats',['chats'=>$chat->message]);
     }
 
 }
