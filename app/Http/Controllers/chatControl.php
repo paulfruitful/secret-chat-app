@@ -17,7 +17,13 @@ class chatControl extends Controller
         return view('chat',['chats'=>$chat->message->all()]);
     }
 
+    public function create(){
+        $chat=Chat::create([
+          'user_id'=>auth()->id()
+        ]);
 
+
+    }
 
 
 
