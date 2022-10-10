@@ -18,6 +18,9 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <ul class="list-group">
+                <li class="list-group-item">An item</li>
+              </ul>
 
             <div class="fixed-bottom">
             <div class="mb-3">
