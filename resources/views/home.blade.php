@@ -18,13 +18,20 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <p class="fs-2 fw-bold text-center">Chats</p>
             <ul class="list-group">
                 @forelse ($chats as $chat)
+                @if (auth()->id()==$chat->user->id)
                     
                 <li class="list-group-item">{{$chat->message}}</li>
+                @else
+                    
+                <li class="list-group-item text-bg-primary p-3"><br>{{$chat->message}}</li>
+                @endif
+                    
                 @empty
                     
-                <li class="list-group-item">No Chats Yet</li>
+                <li class="list-group-item text-bg-primary p-3">No Chats Yet</li>
                 @endforelse
               </ul>
 
