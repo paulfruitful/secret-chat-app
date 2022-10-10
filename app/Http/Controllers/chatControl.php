@@ -25,7 +25,6 @@ class chatControl extends Controller
      'user_id'=>auth()->id()
   ]);
 
-  broadcast(new Messagesent($user, $message))->toOthers();
 
   return redirect('/home')->with(['status' => 'Message Sent!'] );
 }
