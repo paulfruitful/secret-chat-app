@@ -42,10 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function chat(){
-        return $this->hasMany(Chat::class,'user_id');
-    }
+  
     public function message(){
-        return $this->hasManyThrough(Message::class,Chat::class);
+        return $this->hasMany(Message::class,'user_id');
     }
 }

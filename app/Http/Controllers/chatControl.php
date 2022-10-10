@@ -11,20 +11,9 @@ class chatControl extends Controller
 {
     //
     public function index(){
-        return view('chats',['chats'=>auth()->user()->chat->latest()]);
+        return view('home',['chats'=>auth()->user()->message->latest()]);
     }
-    public function show(Chat $chat){
-        return view('chat',['chats'=>$chat->message->all()]);
-    }
-
-    public function create(){
-        $chat=Chat::create([
-          'user_id'=>auth()->id()
-        ]);
-
-
-    }
-
+   
 
 
     public function sendMessage(Request $request)
