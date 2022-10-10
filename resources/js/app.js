@@ -1,9 +1,11 @@
 import './bootstrap';
 
-Echo.private('chat')
+const channel=Echo.private('chat')
   .listen('MessageSent', (e) => {
-    this.messages.push({
-      message: e.message.message,
-      user: e.user
-    });
+   console.log(e);
   });
+
+channel.subscribed(()=>{
+ console.log('Channel is subscribed')
+
+})
