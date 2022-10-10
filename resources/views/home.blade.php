@@ -19,7 +19,13 @@
                 </div>
             </div>
             <ul class="list-group">
-                <li class="list-group-item">An item</li>
+                @forelse ($chats as $chat)
+                    
+                <li class="list-group-item">{{$chat->message}}</li>
+                @empty
+                    
+                <li class="list-group-item">No Chats Yet</li>
+                @endforelse
               </ul>
 
             <div class="fixed-bottom">
