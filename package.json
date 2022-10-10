@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "laravel-echo": "^1.14.0",
+        "mix": "^0.0.1",
         "pusher-js": "^7.4.0"
     }
 }

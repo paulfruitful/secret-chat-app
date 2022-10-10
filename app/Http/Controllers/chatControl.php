@@ -11,7 +11,7 @@ class chatControl extends Controller
 {
     //
     public function index(){
-        return view('home',['chats'=>auth()->user()->message->latest()]);
+        return view('home',['chats'=>Message::latest()]);
     }
    
 
@@ -20,8 +20,9 @@ class chatControl extends Controller
 {
   $user = auth()->user();
 
-  $message = $user->message->create([
-    'message' => $request->input('message')
+  $message = Message::create([
+    'message'=>$request->message,
+     'user_id'=>auth()->id()
   ]);
 
   broadcast(new Messagesent($user, $message))->toOthers();
