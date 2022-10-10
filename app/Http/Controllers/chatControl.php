@@ -14,8 +14,12 @@ class chatControl extends Controller
         return view('chats',['chats'=>auth()->user()->chat->latest()]);
     }
     public function show(Chat $chat){
-        return view('chat',['chats'=>$chat->message]);
+        return view('chat',['chats'=>$chat->message->all()]);
     }
+
+
+
+
 
     public function sendMessage(Request $request)
 {
