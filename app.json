@@ -1,0 +1,15 @@
+{
+    "addons": [
+        "heroku-postgresql",
+        "heroku-redis",
+        "scheduler"
+    ],
+    "buildpacks": [
+        {
+            "url": "heroku/php"
+        },
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
+}
