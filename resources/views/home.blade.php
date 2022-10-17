@@ -44,7 +44,7 @@
             <div class="bottom">
             <div class="mb-3">
                 <form action="/send" method="post">
-                    @csrf
+                    
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3" placeholder="Send A New Message {{auth()->user()->name}}"></textarea>
                 <button type="submit" class="btn btn-primary">Send <i></i></button>      
