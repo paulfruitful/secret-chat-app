@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('messages', function (Blueprint $table) {
             
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');;
 
         });
     }
