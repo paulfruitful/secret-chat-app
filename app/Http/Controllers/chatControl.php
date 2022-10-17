@@ -26,7 +26,8 @@ class chatControl extends Controller
   ]);
 
 
-  return redirect('/home')->with(['status' => 'Message Sent!','chats'=>Message::all()] );
+  return redirect('/home')->with(['status' => 'Message Sent!',
+  'chats'=>Message::all()] );
 }
 
 }
