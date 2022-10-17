@@ -11,7 +11,7 @@ class chatControl extends Controller
 {
     //
     public function index(){
-        return view('home',['chats'=>Message::orderBy('created_at','asc')]);
+        return view('home',['chats'=>Message::all()]);
     }
    
 
